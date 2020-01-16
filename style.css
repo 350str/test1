@@ -1,0 +1,29 @@
+.books-container {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.book__image {
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+  }
+
+.book:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.book__title {
+    margin: 5px auto;
+    width: 200px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.book {
+    cursor: pointer;
+}
