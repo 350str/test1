@@ -10,57 +10,83 @@
 </head>
 <body>
     <div class="page">
-        <header></header>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+        </header>
         
         <main>
 
-            <img class="basket-icon" src="./images/shopping-cart_icon-icons.com_72552.svg">
+            <section class="content">
 
-            <div class="books-container"></div>
+                <img class="basket-icon" src="./images/shopping-cart_icon-icons.com_72552.svg">
 
-            <div class="popup">
-                <div class="popup__content">
-                    <img class="popup__close" src="./images/close.svg" alt="" >
-                    <h2 class="popup__title"></h2>
-                    <img class="popup__image">
-                    <p class="popup__subtitle"></p>
-                    <p class="popup__isbn"></p>
-                    <a class="popup__url" target="_blank">More information</a>
-                    <p class="popup__price"></p>
-                    <div class="popup__button">
-                        <button class="popup__button_buy">Buy it</button>
-                        <div class="popup__button_count">
-                            <button class="popup__button_minus btn btn-light">-</button>
-                            <p class="popup__input">1</p>
-                            <button class="popup__button_plus btn btn-light">+</button>
+                <div class="books-container"></div>
+                
+                <div class="popup">
+                    <div class="popup__content">
+                        <img class="popup__close" src="./images/close.svg" alt="" >
+                        <h2 class="popup__title"></h2>
+                        <img class="popup__image">
+                        <p class="popup__subtitle"></p>
+                        <p class="popup__isbn"></p>
+                        <a class="popup__url" target="_blank">More information</a>
+                        <p class="popup__price"></p>
+                        <div class="popup__button">
+                            <button class="popup__button_buy">Buy it</button>
+                            <div class="popup__button_count">
+                                <button class="popup__button_minus btn btn-light">-</button>
+                                <p class="popup__input">1</p>
+                                <button class="popup__button_plus btn btn-light">+</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="sellout popup">
-                <div class="popup__content sellout__content">
-                    <img class="popup__close" src="./images/close.svg" alt="" >
+                <div class="sellout popup">
+                    <div class="popup__content sellout__content">
+                        <img class="popup__close" src="./images/close.svg" alt="" >
 
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Count</th>
-                            <th scope="col">Total price</th>
-                          </tr>
-                        </thead>
-                        <tbody class="basket__table">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Count</th>
+                                <th scope="col">Total price</th>
+                            </tr>
+                            </thead>
+                            <tbody class="basket__table">
 
-    
-                        </tbody>
-                      </table>
+        
+                            </tbody>
+                        </table>
 
+                    </div>
                 </div>
-            </div>
             
-            
+            </section>
         </main>
         <footer></footer>
     </div>

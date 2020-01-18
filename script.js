@@ -1,6 +1,6 @@
 const page = document.querySelector('.page');
 const buyButton = document.querySelector('.popup__button_buy');
-const basket = document.querySelector('.basket-icon');
+const basketIcon = document.querySelector('.basket-icon');
 const sellout = document.querySelector('.sellout');
 const basketData = new Array;
 
@@ -78,27 +78,48 @@ const popupClose = (event) => {
 
 const showBasket = () => {
     const table = document.querySelector('.basket__table');
+    const thElem = document.querySelectorAll('.ggg');
+    thElem.forEach(item => item.remove());
+    console.log(thElem);
     sellout.classList.add('popup_is-opened');
     basketData.forEach((item, index) => {
     table.insertAdjacentHTML('beforeEnd', ` 
-    <th scope="row">${ index + 1 }</th>  
-    <td>${ item.title }</td>
-    <td>${ item.count }</td>
-    <td>${ item.totalPrice }</td>`);
+    <th scope="row" class="ggg">${ index + 1 }</th>  
+    <td class="ggg">${ item.title }</td>
+    <td class="ggg">${ item.count }</td>
+    <td class="ggg">${ item.totalPrice }</td>`);
 
     })
 }
 
 const selloutTabFill = () => {
-    console.log(event.target.parentElement.parentElement);
+
     const data = new Object;
-    
-    data.title = event.target.parentElement.parentElement.querySelector('.popup__title').textContent;
-    data.count = event.target.parentElement.parentElement.querySelector('.popup__input').textContent;
-    data.totalPrice = (+event.target.parentElement.parentElement.querySelector('.popup__price').textContent * +data.count).toFixed(2);
-    basketData.push(data);
+    const currentBook = event.target.parentElement.parentElement;
+
+    data.title = currentBook.querySelector('.popup__title').textContent;
+    data.count = currentBook.querySelector('.popup__input').textContent;
+    data.totalPrice = (+currentBook.querySelector('.popup__price').textContent * +data.count).toFixed(2);
+
+    const index = basketData.findIndex(item => item.title === data.title);
+    if (index !== -1) {
+        basketData[index].count = +basketData[index].count + +data.count;
+        basketData[index].totalPrice = (+basketData[index].totalPrice + +data.totalPrice).toFixed(2);
+    }
+
+    /*if (basketData.some(item => item.title === data.title)) {
+        
+        basketData.forEach(item => {
+            if (item.title === data.title) {
+                item.count  = +item.count + +data.count;
+                item.totalPrice = (+item.totalPrice + +data.totalPrice).toFixed(2);
+            }
+        })
+    }*/ else {
+        basketData.push(data);
+    }
+
     alert('Товар добавлен в корзину!');
-    console.log(basketData);
     document.querySelector('.popup__input').textContent = 1;
 }
 
@@ -108,5 +129,5 @@ changeVal();
 page.addEventListener('click', showBookPopup);
 page.addEventListener('click', popupClose);
 buyButton.addEventListener('click', selloutTabFill);
-basket.addEventListener('click', showBasket);
+basketIcon.addEventListener('click', showBasket);
 
