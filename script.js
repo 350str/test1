@@ -7,7 +7,7 @@ class Book {
 
     // *** Получение данных с сервера и последующий рендер через createBook ***
     getData() {
-        fetch ( 'http://5d22b7fd4e05c600146ef4dd.mockapi.io/cupcake/books' )
+        fetch ( 'https://5d22b7fd4e05c600146ef4dd.mockapi.io/cupcake/books' )
         .then (res => {
             if (res.ok) return res.json();
                         return Promise.reject( `Ошибка: ${ res.status }` );  
