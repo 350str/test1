@@ -12,7 +12,6 @@
     <div class="page">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -27,9 +26,6 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Pricing</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
                   </ul>
                 </div>
               </nav>
@@ -40,41 +36,51 @@
 
             <section class="content">
 
-                <img class="basket-icon" src="./images/shopping-cart_icon-icons.com_72552.svg">
+              <div class="basket-icon">
+                <img class="basket-icon__image" src="./images/shoppingbasket_empty.svg">
+                <span class="basket-icon__counter">0</span>
+              </div>
 
                 <div class="books-container"></div>
-                
-                <div class="popup">
+
+                <div class="book-popup popup">
                     <div class="popup__content">
                         <img class="popup__close" src="./images/close.svg" alt="" >
                         <h2 class="popup__title"></h2>
                         <img class="popup__image">
                         <p class="popup__subtitle"></p>
-                        <p class="popup__isbn"></p>
+                        <div class="popup__block">
+                          <p class="popup__block-text">Price, $</p>
+                          <p class="popup__price"></p>
+                        </div>
+                        <div class="popup__block">
+                          <p class="popup__block-text">ISBN13</p>
+                          <p class="popup__isbn13"></p>
+                        </div>
                         <a class="popup__url" target="_blank">More information</a>
-                        <p class="popup__price"></p>
                         <div class="popup__button">
                             <button class="popup__button_buy">Buy it</button>
                             <div class="popup__button_count">
                                 <button class="popup__button_minus btn btn-light">-</button>
-                                <p class="popup__input">1</p>
+                                <p class="popup__counter">1</p>
                                 <button class="popup__button_plus btn btn-light">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="sellout popup">
-                    <div class="popup__content sellout__content">
+                <div class="basket-popup popup">
+                    <div class="popup__content basket__content">
                         <img class="popup__close" src="./images/close.svg" alt="" >
 
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Count</th>
-                                <th scope="col">Total price</th>
+                                <th scope="col" class="table__text table__counter">#</th>
+                                <th scope="col" class="table__text">Name</th>
+                                <th scope="col" class="table__text">Count</th>
+                                <th scope="col" class="table__text">Total price</th>
+                            
                             </tr>
                             </thead>
                             <tbody class="basket__table">
@@ -90,6 +96,7 @@
         </main>
         <footer></footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
