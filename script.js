@@ -1,3 +1,4 @@
+(function() {
 const page = document.querySelector('.page');
 const buyButton = document.querySelector('.popup__button_buy');
 const basketIcon = document.querySelector('.basket-icon__image');
@@ -139,3 +140,4 @@ page.addEventListener('click', bookPopup.showPopup);
 page.addEventListener('click', book.close);
 buyButton.addEventListener('click', basket.basketContent);
 basketIcon.addEventListener('click', basket.showBasket);
+})();
